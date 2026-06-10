@@ -4,9 +4,23 @@
  * ============================================================
  */
 
-// Siempre arrancar desde el tope al cargar la página
+// Siempre arrancar desde el tope — limpia el hash para que el navegador
+// móvil no salte a la sección que el usuario visitó la vez anterior.
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-window.addEventListener('load', () => window.scrollTo(0, 0));
+if (window.location.hash) {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+window.scrollTo(0, 0);
+document.addEventListener('DOMContentLoaded', () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 
