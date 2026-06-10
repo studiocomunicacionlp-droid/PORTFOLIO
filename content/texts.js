@@ -260,10 +260,8 @@ const CONTENT = {
     tagline: "Editor de Video — TikTok & Reels",
     copyright: `© ${new Date().getFullYear()} Francisco Gimenez. Todos los derechos reservados.`,
     social: [
-      { name: "Instagram", url: "https://instagram.com/tuusuario",   icon: "instagram" },
-      { name: "TikTok",    url: "https://tiktok.com/@tuusuario",     icon: "tiktok"    },
-      { name: "YouTube",   url: "https://youtube.com/@tuusuario",    icon: "youtube"   },
-      { name: "LinkedIn",  url: "https://linkedin.com/in/tuusuario", icon: "linkedin"  },
+      { name: "Instagram", url: "https://www.instagram.com/frangimennez",                                                         icon: "instagram" },
+      { name: "WhatsApp",  url: "https://wa.me/5493425220624?text=Hola%20Francisco!%20Me%20gustar%C3%ADa%20consultar%20sobre%20edici%C3%B3n%20de%20videos.", icon: "whatsapp"  },
     ],
     whatsapp: {
       number: "+5493425220624",
