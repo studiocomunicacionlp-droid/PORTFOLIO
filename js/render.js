@@ -13,6 +13,26 @@
   const setAttr  = (id, attr, val) => { const el = $(id); if (el) el[attr] = val; };
   const setHref  = (id, href) => { const el = $(id); if (el) el.href = href; };
 
+  // ── MODAL DE VIDEO (global — debe estar antes de renderizar secciones) ──
+  const _modal       = $('video-modal');
+  const _modalIframe = $('video-modal-iframe');
+  const _modalClose  = $('video-modal-close');
+
+  function openModal(videoId) {
+    // src se setea sincrónicamente dentro del click → preserva el gesto del usuario
+    // lo que permite autoplay en todos los navegadores incluido mobile
+    _modalIframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+    _modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    _modal.classList.remove('open');
+    _modalIframe.src = '';
+    document.body.style.overflow = '';
+  }
+  _modalClose?.addEventListener('click', closeModal);
+  _modal?.addEventListener('click', e => { if (e.target === _modal) closeModal(); });
+
   function photoOrPlaceholder(src, alt, cssClass, svgIcon) {
     if (src) {
       return `<img src="${src}" alt="${alt}" class="${cssClass}" loading="lazy">`;
@@ -236,27 +256,9 @@
       </div>
     `).join('');
 
-    const modal       = document.getElementById('video-modal');
-    const modalIframe = document.getElementById('video-modal-iframe');
-    const modalClose  = document.getElementById('video-modal-close');
-
-    function openModal(videoId) {
-      modalIframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeModal() {
-      modal.classList.remove('open');
-      modalIframe.src = '';
-      document.body.style.overflow = '';
-    }
-
     portGrid.querySelectorAll('.portfolio-video-placeholder').forEach(el => {
       el.addEventListener('click', () => openModal(el.closest('.portfolio-video-wrap').dataset.videoId));
     });
-
-    modalClose.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   }
 
   // ── CASOS DE ÉXITO ────────────────────────────────────────
@@ -293,14 +295,7 @@
       `).join('');
 
       casesGrid.querySelectorAll('.case-video-placeholder').forEach(el => {
-        el.addEventListener('click', () => {
-          const videoId = el.closest('.case-video-wrap').dataset.videoId;
-          const modal       = document.getElementById('video-modal');
-          const modalIframe = document.getElementById('video-modal-iframe');
-          modalIframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
-          modal.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        });
+        el.addEventListener('click', () => openModal(el.closest('.case-video-wrap').dataset.videoId));
       });
     }
   }
