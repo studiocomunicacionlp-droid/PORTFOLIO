@@ -268,7 +268,7 @@
     const casesGrid = $('cases-grid');
     if (casesGrid) {
       casesGrid.innerHTML = casesData.items.map((c, i) => `
-        <div class="case-card reveal" style="transition-delay:${i * 0.12}s">
+        <div class="case-card reveal visible" style="transition-delay:${i * 0.12}s">
           <div class="case-video-wrap" data-video-id="${c.videoId}">
             <div class="case-video-placeholder" style="background-image:url('https://drive.google.com/thumbnail?id=${c.videoId}&sz=w400')">
               <div class="portfolio-play-btn">

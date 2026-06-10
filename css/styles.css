@@ -1481,9 +1481,9 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
 }
 .case-link:hover { border-color: var(--accent); color: var(--accent); }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .case-card { grid-template-columns: 1fr; }
-  .case-video-wrap { width: 100%; min-height: 240px; }
+  .case-video-wrap { width: 100%; min-height: 220px; }
   .case-info { padding: 1.25rem; }
 }
 
