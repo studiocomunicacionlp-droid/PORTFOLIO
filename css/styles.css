@@ -745,11 +745,11 @@ input, textarea, select { font-family: inherit; }
 }
 .portfolio-link:hover { transform: scale(1.05); }
 
-/* Portfolio — videos embebidos */
+/* Portfolio — videos verticales (TikTok / Reels) */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .portfolio-item {
@@ -761,26 +761,68 @@ input, textarea, select { font-family: inherit; }
 }
 .portfolio-item:hover {
   border-color: rgba(255,107,0,0.35);
-  transform: translateY(-4px);
   box-shadow: 0 0 30px rgba(255,107,0,0.15);
 }
+.portfolio-item.hidden { display: none; }
 
-/* Contenedor 16:9 — coincide con el player de Drive */
+/* Contenedor 9:16 — videos verticales de TikTok/Reels */
 .portfolio-video-wrap {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 177.78%; /* 9:16 */
   height: 0;
   overflow: hidden;
-  background: #000;
+  background: #111;
 }
+
+/* Placeholder: fondo oscuro + ícono play, visible antes del clic */
+.portfolio-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
+  transition: background 0.3s;
+}
+.portfolio-video-placeholder:hover { background: linear-gradient(160deg, #222 0%, #111 100%); }
+.portfolio-play-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--grad-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255,107,0,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.portfolio-video-placeholder:hover .portfolio-play-btn {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px rgba(255,107,0,0.65);
+}
+.portfolio-play-btn svg { margin-left: 4px; }
+.portfolio-play-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Iframe — aparece solo después del clic */
 .portfolio-video-wrap iframe {
   position: absolute;
-  top: 0; left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   border: none;
+  display: none;
 }
+.portfolio-video-wrap.playing .portfolio-video-placeholder { display: none; }
+.portfolio-video-wrap.playing iframe { display: block; }
 
 /* ── TESTIMONIALS ────────────────────────────────────────────── */
 .testimonials { background: var(--navy); }
@@ -1179,7 +1221,7 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-photo-wrapper { width: 360px; height: 440px; }
   .hero-float-1 { left: -20px; }
@@ -1187,7 +1229,7 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
 }
 
 @media (max-width: 600px) {
-  .portfolio-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
 }
 
 @media (max-width: 768px) {
@@ -1210,7 +1252,7 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   .about-photo-wrapper { max-width: 340px; margin: 0 auto; }
 
   .services-grid { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
 
   .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
   .form-row { grid-template-columns: 1fr; }

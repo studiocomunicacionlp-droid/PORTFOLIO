@@ -220,22 +220,38 @@
     `).join('');
   }
 
-  // Grid items — iframes de Google Drive (videos verticales 9:16)
+  // Grid items — click-to-play (evita autoplay masivo y permite pausar)
   const portGrid = $('portfolio-grid');
   if (portGrid) {
     portGrid.innerHTML = port.items.map((p, i) => `
       <div class="portfolio-item reveal" data-category="${p.category}" style="transition-delay:${i * 0.07}s">
-        <div class="portfolio-video-wrap">
+        <div class="portfolio-video-wrap" data-video-id="${p.videoId}">
+          <div class="portfolio-video-placeholder">
+            <div class="portfolio-play-btn">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="portfolio-play-label">Reproducir</span>
+          </div>
           <iframe
-            src="https://drive.google.com/file/d/${p.videoId}/preview"
-            allow="autoplay"
+            src=""
+            allow="autoplay; fullscreen"
             allowfullscreen
-            loading="lazy"
             frameborder="0"
           ></iframe>
         </div>
       </div>
     `).join('');
+
+    // Click-to-play: carga el iframe solo al hacer clic
+    portGrid.querySelectorAll('.portfolio-video-placeholder').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const wrap = btn.closest('.portfolio-video-wrap');
+        const videoId = wrap.dataset.videoId;
+        const iframe = wrap.querySelector('iframe');
+        iframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+        wrap.classList.add('playing');
+      });
+    });
   }
 
   // ── QUOTE (Napoleon Hill) ─────────────────────────────────
