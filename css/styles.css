@@ -412,8 +412,8 @@ input, textarea, select { font-family: inherit; }
 
 .hero-photo-wrapper {
   position: relative;
-  width: 420px;
-  height: 520px;
+  width: 500px;
+  height: 620px;
 }
 
 .hero-photo-ring {
@@ -486,13 +486,13 @@ input, textarea, select { font-family: inherit; }
 
 .about-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: center;
 }
 
 .about-photo-wrapper {
-  position: relative;
+  display: none;
 }
 .about-photo {
   width: 100%;
@@ -1295,7 +1295,7 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-photo-wrapper { width: 360px; height: 440px; }
+  .hero-photo-wrapper { width: 420px; height: 520px; }
   .hero-float-1 { left: -20px; }
   .hero-float-2 { right: -20px; }
 }
@@ -1319,7 +1319,7 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   .hero-actions { justify-content: center; flex-wrap: wrap; }
   .hero-stats { justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
   .hero-visual { display: flex; justify-content: center; margin-top: 2rem; }
-  .hero-photo-wrapper { width: 220px; height: 270px; }
+  .hero-photo-wrapper { width: 260px; height: 320px; }
   .hero-float-card { display: none; }
   .hero-photo-ring { display: none; }
 
