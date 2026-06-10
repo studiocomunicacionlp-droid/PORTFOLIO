@@ -119,6 +119,93 @@
     `).join('');
   }
 
+  // ── PRICING ───────────────────────────────────────────────
+  if (C.pricing) {
+    const pr = C.pricing;
+    setText('pricing-badge', pr.badge);
+    setText('pricing-headline', pr.headline);
+    setText('pricing-subtitle', pr.subtitle);
+
+    const pricingCols = $('pricing-cols');
+    if (pricingCols) {
+      pricingCols.innerHTML = pr.categories.map((col, ci) => `
+        <div class="pricing-col ${col.color} reveal" style="transition-delay:${ci * 0.1}s">
+          <div class="pricing-col-header">
+            <div class="pricing-col-name">${col.name}</div>
+            <div class="pricing-col-sub">${col.subtitle}</div>
+          </div>
+          <div class="pricing-col-plans">
+            ${col.plans.map(p => `
+              <div class="pricing-plan">
+                <div>
+                  <div class="pricing-plan-name">${p.name}</div>
+                  <div class="pricing-plan-desc">${p.desc}</div>
+                </div>
+                <div class="pricing-plan-price">${p.price}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const menCard = $('pricing-mensual');
+    if (menCard && pr.mensual_card) {
+      const mc = pr.mensual_card;
+      menCard.innerHTML = `
+        <div class="pricing-mensual-arrow">↘</div>
+        <div class="pm-title">${mc.title}</div>
+        <div class="pm-main">${mc.subtitle}</div>
+        <div class="pm-sub">${mc.desc}</div>
+        <div class="pm-highlight">${mc.highlight}</div>
+        <div class="pm-note">${mc.note}</div>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1.25rem;font-size:.85rem;padding:.7rem 1.4rem">
+          Consultar precio
+        </a>
+      `;
+    }
+
+    const extrasEl = $('pricing-extras');
+    if (extrasEl && pr.extras) {
+      extrasEl.innerHTML = `
+        <div class="pricing-extras-title">${pr.extras.title}</div>
+        <div class="pricing-extra-items">
+          ${pr.extras.items.map(e => `
+            <div class="pricing-extra-item">
+              <span>${e.name}</span>
+              <span class="pricing-extra-price">${e.price}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+  }
+
+  // ── YOUTUBE ───────────────────────────────────────────────
+  if (C.youtube) {
+    const yt = C.youtube;
+    setText('youtube-badge', yt.badge);
+    setText('youtube-headline', yt.headline);
+    setText('youtube-subtitle', yt.subtitle);
+    setText('youtube-note', yt.note);
+
+    const ytCta = $('youtube-cta');
+    if (ytCta) ytCta.querySelector('span').textContent = yt.cta;
+
+    const ytFeatures = $('youtube-features');
+    if (ytFeatures) {
+      ytFeatures.innerHTML = yt.features.map(f => `
+        <div class="yt-feature reveal">
+          <div class="yt-feature-icon">${f.icon}</div>
+          <div>
+            <div class="yt-feature-title">${f.title}</div>
+            <div class="yt-feature-desc">${f.desc}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
   // ── PORTFOLIO ─────────────────────────────────────────────
   const port = C.portfolio;
   setText('portfolio-badge', port.badge);
@@ -286,6 +373,8 @@
     github:    `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>`,
     behance:   `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.7zM15.971 13c-.073-1.136-.543-2.062-2.285-2.062-1.567 0-2.292.856-2.349 2.062h4.634zM3 5h4c.552 0 3.5.044 3.5 2.701 0 1.301-.744 2.07-1.683 2.437C10.154 10.53 11 11.5 11 13c0 3.059-2.604 3-3.5 3H3V5zm2.5 2.5v2h2c.966 0 1.5-.464 1.5-1 0-.65-.542-1-1.5-1h-2zm0 4v2h2c1.163 0 1.5-.503 1.5-1.063 0-.546-.399-0.937-1.5-0.937h-2z"/></svg>`,
     twitter:   `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+    tiktok:    `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>`,
+    youtube:   `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>`,
   };
 
   const footerSocial = $('footer-social');
