@@ -775,7 +775,7 @@ input, textarea, select { font-family: inherit; }
   background: #111;
 }
 
-/* Placeholder: fondo oscuro + ícono play, visible antes del clic */
+/* Placeholder: fondo con blur — visible antes del clic */
 .portfolio-video-placeholder {
   position: absolute;
   inset: 0;
@@ -785,10 +785,14 @@ input, textarea, select { font-family: inherit; }
   justify-content: center;
   gap: 1rem;
   cursor: pointer;
-  background: linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 100%);
-  transition: background 0.3s;
+  background: rgba(10,10,10,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.25s;
+  z-index: 2;
 }
-.portfolio-video-placeholder:hover { background: linear-gradient(160deg, #222 0%, #111 100%); }
+.portfolio-video-placeholder:hover { background: rgba(10,10,10,0.35); }
+
 .portfolio-play-btn {
   width: 64px;
   height: 64px;
@@ -797,27 +801,32 @@ input, textarea, select { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(255,107,0,0.45);
+  box-shadow: 0 0 30px rgba(255,107,0,0.5);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .portfolio-video-placeholder:hover .portfolio-play-btn {
-  transform: scale(1.1);
-  box-shadow: 0 0 40px rgba(255,107,0,0.65);
+  transform: scale(1.12);
+  box-shadow: 0 0 45px rgba(255,107,0,0.7);
 }
 .portfolio-play-btn svg { margin-left: 4px; }
 .portfolio-play-label {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Iframe — aparece solo después del clic */
+/* Iframe: ocupa 100% de altura y se escala para llenar el frame 9:16.
+   El player de Drive es 16:9; al hacerlo más ancho (256/81 ≈ 316%) y
+   centrarlo, el video vertical (que ocupa el centro del player) llena
+   exactamente el contenedor sin barras negras. */
 .portfolio-video-wrap iframe {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  left: 50%;
+  width: 316%;
   height: 100%;
+  transform: translateX(-50%);
   border: none;
   display: none;
 }
