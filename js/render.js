@@ -236,12 +236,27 @@
       </div>
     `).join('');
 
-    portGrid.querySelectorAll('.portfolio-video-wrap').forEach(wrap => {
-      wrap.querySelector('.portfolio-video-placeholder').addEventListener('click', () => {
-        wrap.querySelector('iframe').src = `https://drive.google.com/file/d/${wrap.dataset.videoId}/preview?autoplay=1`;
-        wrap.classList.add('playing');
-      });
+    const modal       = document.getElementById('video-modal');
+    const modalIframe = document.getElementById('video-modal-iframe');
+    const modalClose  = document.getElementById('video-modal-close');
+
+    function openModal(videoId) {
+      modalIframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.classList.remove('open');
+      modalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    portGrid.querySelectorAll('.portfolio-video-placeholder').forEach(el => {
+      el.addEventListener('click', () => openModal(el.closest('.portfolio-video-wrap').dataset.videoId));
     });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   }
 
   // ── QUOTE (Napoleon Hill) ─────────────────────────────────
