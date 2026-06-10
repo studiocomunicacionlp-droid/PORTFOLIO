@@ -649,12 +649,18 @@ input, textarea, select { font-family: inherit; }
   flex-shrink: 0;
 }
 
-.service-price {
-  font-size: .85rem;
+.service-hook {
+  font-size: .82rem;
   font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
   color: var(--accent);
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,107,0,0.08);
+  border: 1px solid rgba(255,107,0,0.25);
+  border-radius: 6px;
+  padding: .45rem .85rem;
+  margin-bottom: 1.1rem;
+  display: inline-block;
 }
 
 /* ── PORTFOLIO ───────────────────────────────────────────────── */

@@ -111,10 +111,10 @@
         <div class="service-icon">${s.icon}</div>
         <h3 class="service-title">${s.title}</h3>
         <p class="service-desc">${s.desc}</p>
+        <div class="service-hook">${s.hook}</div>
         <ul class="service-features">
           ${s.features.map(f => `<li>${f}</li>`).join('')}
         </ul>
-        <div class="service-price">${s.price}</div>
       </div>
     `).join('');
   }
