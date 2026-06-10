@@ -271,6 +271,7 @@ input, textarea, select { font-family: inherit; }
   position: relative;
   overflow: hidden;
   padding-top: 5rem;
+  padding-bottom: 3rem;
 }
 
 /* Fondo animado con partículas/formas */
@@ -828,17 +829,6 @@ input, textarea, select { font-family: inherit; }
 }
 .portfolio-play-btn svg { margin-left: 4px; }
 .portfolio-play-label { display: none; }
-
-/* Capa transparente sobre el iframe — un toque para y vuelve al thumbnail */
-.portfolio-tap-stop {
-  display: none;
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  cursor: pointer;
-  background: transparent;
-}
-.portfolio-video-wrap.playing .portfolio-tap-stop { display: block; }
 
 /* Iframe: ocupa 100% de altura y se escala para llenar el frame 9:16.
    El player de Drive es 16:9; al hacerlo más ancho (256/81 ≈ 316%) y

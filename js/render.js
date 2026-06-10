@@ -232,30 +232,14 @@
             </div>
           </div>
           <iframe src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
-          <div class="portfolio-tap-stop"></div>
         </div>
       </div>
     `).join('');
 
     portGrid.querySelectorAll('.portfolio-video-wrap').forEach(wrap => {
-      const placeholder = wrap.querySelector('.portfolio-video-placeholder');
-      const iframe      = wrap.querySelector('iframe');
-      const tapStop     = wrap.querySelector('.portfolio-tap-stop');
-
-      // Tap en placeholder → arranca el video
-      placeholder.addEventListener('click', () => {
-        iframe.src = `https://drive.google.com/file/d/${wrap.dataset.videoId}/preview?autoplay=1`;
+      wrap.querySelector('.portfolio-video-placeholder').addEventListener('click', () => {
+        wrap.querySelector('iframe').src = `https://drive.google.com/file/d/${wrap.dataset.videoId}/preview?autoplay=1`;
         wrap.classList.add('playing');
-        // Esperar 600ms antes de activar el tap-stop para que el mismo toque
-        // no dispare ambos handlers en mobile
-        tapStop.style.pointerEvents = 'none';
-        setTimeout(() => { tapStop.style.pointerEvents = ''; }, 600);
-      });
-
-      // Tap sobre el video mientras reproduce → lo para y vuelve al thumbnail
-      tapStop.addEventListener('click', () => {
-        iframe.src = '';
-        wrap.classList.remove('playing');
       });
     });
   }
