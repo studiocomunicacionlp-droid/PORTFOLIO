@@ -102,7 +102,7 @@ const CONTENT = {
 
   /* ── PRECIOS (sección especial de pricing) ───────────────── */
   pricing: {
-    badge: "Precios",
+    badge: "Packs",
     headline: "Edición de Video — Solos & Por Packs",
     subtitle: "Contenido en reels o publicidad que <strong>para el scroll</strong> y <strong>genera resultados</strong>.",
     categories: [
@@ -139,13 +139,6 @@ const CONTENT = {
       desc: "Videos de Lunes a Sábados.",
       highlight: "234 VIDEOS AL MES",
       note: "Consultar disponibilidad y precio especial.",
-    },
-    extras: {
-      title: "EXTRAS",
-      items: [
-        { name: "Portadas para Reels — Individual", price: "$3 USD c/u" },
-        { name: "Portadas en Pack", price: "Descuento especial" },
-      ],
     },
   },
 
