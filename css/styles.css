@@ -775,7 +775,7 @@ input, textarea, select { font-family: inherit; }
   background: #111;
 }
 
-/* Placeholder: fondo con blur — visible antes del clic */
+/* Placeholder: thumbnail del video con blur encima */
 .portfolio-video-placeholder {
   position: absolute;
   inset: 0;
@@ -785,13 +785,25 @@ input, textarea, select { font-family: inherit; }
   justify-content: center;
   gap: 1rem;
   cursor: pointer;
-  background: rgba(10,10,10,0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: background 0.25s;
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
   z-index: 2;
+  overflow: hidden;
+  transition: filter 0.25s;
 }
-.portfolio-video-placeholder:hover { background: rgba(10,10,10,0.35); }
+/* Capa blur sobre el thumbnail */
+.portfolio-video-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.35);
+  transition: background 0.25s;
+}
+.portfolio-video-placeholder:hover::before { background: rgba(0,0,0,0.2); }
+.portfolio-video-placeholder > * { position: relative; z-index: 1; }
 
 .portfolio-play-btn {
   width: 64px;
@@ -809,12 +821,18 @@ input, textarea, select { font-family: inherit; }
   box-shadow: 0 0 45px rgba(255,107,0,0.7);
 }
 .portfolio-play-btn svg { margin-left: 4px; }
-.portfolio-play-label {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.portfolio-play-label { display: none; }
+
+/* Capa transparente sobre el iframe — un toque para y vuelve al thumbnail */
+.portfolio-tap-stop {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: pointer;
+  background: transparent;
 }
+.portfolio-video-wrap.playing .portfolio-tap-stop { display: block; }
 
 /* Iframe: ocupa 100% de altura y se escala para llenar el frame 9:16.
    El player de Drive es 16:9; al hacerlo más ancho (256/81 ≈ 316%) y

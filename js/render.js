@@ -14,8 +14,8 @@
   const setHref  = (id, href) => { const el = $(id); if (el) el.href = href; };
 
   function photoOrPlaceholder(src, alt, cssClass, svgIcon) {
-    if (src && src !== 'images/hero-photo.jpg' && src !== 'images/about-photo.jpg') {
-      return `<img src="${src}" alt="${alt}" class="${cssClass}" loading="lazy" onerror="this.parentElement.innerHTML=placeholderSVG('${alt}')">`;
+    if (src) {
+      return `<img src="${src}" alt="${alt}" class="${cssClass}" loading="lazy">`;
     }
     return `<div class="${cssClass}-placeholder">
       ${svgIcon || '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>'}
@@ -226,30 +226,32 @@
     portGrid.innerHTML = port.items.map((p, i) => `
       <div class="portfolio-item reveal" data-category="${p.category}" style="transition-delay:${i * 0.07}s">
         <div class="portfolio-video-wrap" data-video-id="${p.videoId}">
-          <div class="portfolio-video-placeholder">
+          <div class="portfolio-video-placeholder" style="background-image:url('https://drive.google.com/thumbnail?id=${p.videoId}&sz=w400')">
             <div class="portfolio-play-btn">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
             </div>
-            <span class="portfolio-play-label">Reproducir</span>
           </div>
-          <iframe
-            src=""
-            allow="autoplay; fullscreen"
-            allowfullscreen
-            frameborder="0"
-          ></iframe>
+          <iframe src="" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+          <div class="portfolio-tap-stop"></div>
         </div>
       </div>
     `).join('');
 
-    // Click-to-play: carga el iframe solo al hacer clic
-    portGrid.querySelectorAll('.portfolio-video-placeholder').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const wrap = btn.closest('.portfolio-video-wrap');
-        const videoId = wrap.dataset.videoId;
-        const iframe = wrap.querySelector('iframe');
-        iframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+    portGrid.querySelectorAll('.portfolio-video-wrap').forEach(wrap => {
+      const placeholder = wrap.querySelector('.portfolio-video-placeholder');
+      const iframe      = wrap.querySelector('iframe');
+      const tapStop     = wrap.querySelector('.portfolio-tap-stop');
+
+      // Tap en placeholder → arranca el video
+      placeholder.addEventListener('click', () => {
+        iframe.src = `https://drive.google.com/file/d/${wrap.dataset.videoId}/preview?autoplay=1`;
         wrap.classList.add('playing');
+      });
+
+      // Tap sobre el video mientras reproduce → lo para y vuelve al thumbnail
+      tapStop.addEventListener('click', () => {
+        iframe.src = '';
+        wrap.classList.remove('playing');
       });
     });
   }
