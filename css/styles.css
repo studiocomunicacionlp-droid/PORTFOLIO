@@ -1352,6 +1352,121 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   .metrics-grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* ── CASOS DE ÉXITO ──────────────────────────────────────────── */
+.cases { background: var(--navy); }
+
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.case-card {
+  background: var(--navy-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.case-card:hover {
+  border-color: rgba(255,107,0,0.35);
+  box-shadow: 0 0 40px rgba(255,107,0,0.1);
+}
+
+/* Thumbnail del video — mismo estilo que portfolio */
+.case-video-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 para la preview */
+  height: 0;
+  overflow: hidden;
+  background: #111;
+}
+.case-video-placeholder {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.case-video-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0,0,0,0.3);
+  transition: background 0.25s;
+}
+.case-video-placeholder:hover::before { background: rgba(0,0,0,0.15); }
+.case-video-placeholder > * { position: relative; z-index: 1; }
+
+/* Info */
+.case-info { padding: 1.75rem; }
+
+.case-stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.case-stat {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.case-stat-label {
+  font-size: .8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.case-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: .3rem;
+}
+.case-result {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: .75rem;
+}
+.case-desc {
+  font-size: .875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  padding: .4rem .9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.case-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .cases-grid { grid-template-columns: 1fr; }
+}
+
 /* ── QUOTE (Napoleon Hill) ───────────────────────────────────── */
 .quote-section { background: var(--navy-mid); }
 

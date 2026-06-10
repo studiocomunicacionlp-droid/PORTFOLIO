@@ -197,6 +197,33 @@ const CONTENT = {
     ],
   },
 
+  /* ── CASOS DE ÉXITO ─────────────────────────────────────────── */
+  cases: {
+    badge: "Casos de Éxito",
+    headline: "Marcas que crecieron con mi contenido",
+    subtitle: "Resultados reales de clientes reales.",
+    items: [
+      {
+        brand: "Auralezzi",
+        result: "Mejor CPR de su historia",
+        desc: "Gracias a los videos que creamos juntos, Auralezzi logró el costo por resultado más bajo de toda su historia en Meta Ads.",
+        videoId: "10ZJ37Lp8CQR35es8zqwNz-Wi8tHUYvMh",
+        url: "https://auralezzi.com/",
+        stat: "Mejor CPR",
+        statLabel: "de su historia",
+      },
+      {
+        brand: "Couple Clothing",
+        result: "Videos virales en su lanzamiento",
+        desc: "Los reels que editamos para el lanzamiento de Couple Clothing tuvieron un alcance orgánico masivo y generaron ventas desde el primer día.",
+        videoId: "1P5wLar7db27xM2TBxdoYftsj_WiPj8sY",
+        url: "https://www.coupleclothingarg.com/",
+        stat: "Viral",
+        statLabel: "desde el día 1",
+      },
+    ],
+  },
+
   /* ── FRASE INSPIRACIONAL ──────────────────────────────────── */
   quote: {
     text: "Todo lo que la mente puede concebir y creer, lo puede lograr.",

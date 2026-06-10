@@ -259,6 +259,52 @@
     modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   }
 
+  // ── CASOS DE ÉXITO ────────────────────────────────────────
+  const casesData = C.cases;
+  if (casesData) {
+    setText('cases-badge',    casesData.badge);
+    setText('cases-headline', casesData.headline);
+    setText('cases-subtitle', casesData.subtitle);
+    const casesGrid = $('cases-grid');
+    if (casesGrid) {
+      casesGrid.innerHTML = casesData.items.map((c, i) => `
+        <div class="case-card reveal" style="transition-delay:${i * 0.12}s">
+          <div class="case-video-wrap" data-video-id="${c.videoId}">
+            <div class="case-video-placeholder" style="background-image:url('https://drive.google.com/thumbnail?id=${c.videoId}&sz=w400')">
+              <div class="portfolio-play-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+            </div>
+          </div>
+          <div class="case-info">
+            <div class="case-stat-row">
+              <span class="case-stat">${c.stat}</span>
+              <span class="case-stat-label">${c.statLabel}</span>
+            </div>
+            <h3 class="case-brand">${c.brand}</h3>
+            <p class="case-result">${c.result}</p>
+            <p class="case-desc">${c.desc}</p>
+            <a href="${c.url}" class="case-link" target="_blank" rel="noopener">
+              Ver sitio
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+          </div>
+        </div>
+      `).join('');
+
+      casesGrid.querySelectorAll('.case-video-placeholder').forEach(el => {
+        el.addEventListener('click', () => {
+          const videoId = el.closest('.case-video-wrap').dataset.videoId;
+          const modal       = document.getElementById('video-modal');
+          const modalIframe = document.getElementById('video-modal-iframe');
+          modalIframe.src = `https://drive.google.com/file/d/${videoId}/preview?autoplay=1`;
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+    }
+  }
+
   // ── QUOTE (Napoleon Hill) ─────────────────────────────────
   const quoteEl = $('quote-inner');
   if (quoteEl && C.quote) {
