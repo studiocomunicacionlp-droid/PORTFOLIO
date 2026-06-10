@@ -687,6 +687,8 @@ input, textarea, select { font-family: inherit; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .portfolio-item {
@@ -749,9 +751,33 @@ input, textarea, select { font-family: inherit; }
 }
 .portfolio-link:hover { transform: scale(1.05); }
 
-/* Portfolio sin info debajo — solo cuadrado visual */
-.portfolio-item { border-radius: var(--radius-lg); overflow: hidden; }
-.portfolio-thumb { aspect-ratio: 9/16; }  /* formato vertical como reel/tiktok */
+/* Portfolio — videos embebidos verticales 9:16 */
+.portfolio-item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--navy-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: var(--transition);
+}
+.portfolio-item:hover {
+  border-color: rgba(255,107,0,0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(255,107,0,0.15);
+}
+.portfolio-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
+.portfolio-video-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--radius-lg);
+}
 
 /* ── TESTIMONIALS ────────────────────────────────────────────── */
 .testimonials { background: var(--navy); }

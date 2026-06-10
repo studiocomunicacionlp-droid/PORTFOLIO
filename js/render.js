@@ -220,23 +220,19 @@
     `).join('');
   }
 
-  // Grid items — solo cuadrados visuales, sin texto debajo
+  // Grid items — iframes de Google Drive (videos verticales 9:16)
   const portGrid = $('portfolio-grid');
   if (portGrid) {
     portGrid.innerHTML = port.items.map((p, i) => `
       <div class="portfolio-item reveal" data-category="${p.category}" style="transition-delay:${i * 0.07}s">
-        <div class="portfolio-thumb">
-          <img src="${p.image}" alt="Video ${i + 1}" loading="lazy"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="portfolio-placeholder" style="display:none;position:absolute;inset:0;">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".4"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <div class="portfolio-overlay">
-            <a href="${p.link}" class="portfolio-link" target="_blank" rel="noopener">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Ver video
-            </a>
-          </div>
+        <div class="portfolio-video-wrap">
+          <iframe
+            src="https://drive.google.com/file/d/${p.videoId}/preview"
+            allow="autoplay"
+            allowfullscreen
+            loading="lazy"
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
     `).join('');
