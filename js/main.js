@@ -4,6 +4,10 @@
  * ============================================================
  */
 
+// Siempre arrancar desde el tope al cargar la página
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('load', () => window.scrollTo(0, 0));
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── CURSOR PERSONALIZADO ──────────────────────────────────
