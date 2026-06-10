@@ -207,7 +207,7 @@ const CONTENT = {
         brand: "Auralezzi",
         result: "Mejor CPR de su historia",
         desc: "Gracias a los videos que creamos juntos, Auralezzi logró el costo por resultado más bajo de toda su historia en Meta Ads.",
-        videoId: "10ZJ37Lp8CQR35es8zqwNz-Wi8tHUYvMh",
+        videoId: "13nhJ5lTVI6bfoK2pYyJjdBlNoH6QVmTg",
         url: "https://auralezzi.com/",
         stat: "Mejor CPR",
         statLabel: "de su historia",
