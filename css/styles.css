@@ -1273,7 +1273,10 @@ body:hover .cursor, body:hover .cursor-follower { opacity: 1; }
   .hero-content { max-width: 100%; }
   .hero-actions { justify-content: center; flex-wrap: wrap; }
   .hero-stats { justify-content: center; flex-wrap: wrap; gap: 1.5rem; }
-  .hero-visual { display: none; } /* ocultar foto/float cards en mobile */
+  .hero-visual { display: flex; justify-content: center; margin-top: 2rem; }
+  .hero-photo-wrapper { width: 220px; height: 270px; }
+  .hero-float-card { display: none; }
+  .hero-photo-ring { display: none; }
 
   .about-inner { grid-template-columns: 1fr; }
   .about-photo-wrapper { max-width: 340px; margin: 0 auto; }
