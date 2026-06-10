@@ -263,10 +263,10 @@ const CONTENT = {
     badge: "En números",
     headline: "Resultados que hablan",
     items: [
-      { value: 200,  suffix: "+",  label: "Clientes satisfechos" },
-      { value: 5000, suffix: "+",  label: "Videos editados" },
-      { value: 4,    suffix: " años", label: "De experiencia" },
-      { value: 98,   suffix: "%",  label: "Clientes que repiten" },
+      { value: 50,   suffix: "+",      label: "Clientes satisfechos" },
+      { value: 1500, suffix: "+",      label: "Videos realizados" },
+      { value: 2,    suffix: "+ años", label: "De experiencia" },
+      { value: 98,   suffix: "%",      label: "Clientes que repiten" },
     ],
   },
 
@@ -312,7 +312,7 @@ const CONTENT = {
       { name: "LinkedIn",  url: "https://linkedin.com/in/tuusuario", icon: "linkedin"  },
     ],
     whatsapp: {
-      number: "+5491112345678",
+      number: "+5493425220624",
       message: "Hola Francisco! Me gustaría consultar sobre edición de videos.",
     },
     email: "hola@franciscogimenez.com",
