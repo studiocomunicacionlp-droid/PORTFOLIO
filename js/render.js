@@ -48,12 +48,12 @@
   const heroPhotoC = $('hero-photo-container');
   if (heroPhotoC) heroPhotoC.innerHTML = photoOrPlaceholder(hero.photo, hero.photo_alt, 'hero-photo', '');
 
-  // Hero stats (usando las métricas)
+  // Hero stats (usando las métricas — prefijo+valor+sufijo)
   const heroStats = $('hero-stats');
   if (heroStats && C.metrics && C.metrics.items) {
     heroStats.innerHTML = C.metrics.items.slice(0, 3).map(m => `
       <div class="hero-stat-item">
-        <div class="hero-stat-value">${m.value}${m.suffix}</div>
+        <div class="hero-stat-value">${m.prefix || ''}${m.value}${m.suffix}</div>
         <div class="hero-stat-label">${m.label}</div>
       </div>
     `).join('');
@@ -220,67 +220,44 @@
     `).join('');
   }
 
-  // Grid items
+  // Grid items — solo cuadrados visuales, sin texto debajo
   const portGrid = $('portfolio-grid');
   if (portGrid) {
-    portGrid.innerHTML = port.items.map((p, i) => {
-      const imgHTML = `
+    portGrid.innerHTML = port.items.map((p, i) => `
+      <div class="portfolio-item reveal" data-category="${p.category}" style="transition-delay:${i * 0.07}s">
         <div class="portfolio-thumb">
-          <img src="${p.image}" alt="${p.title}" loading="lazy"
+          <img src="${p.image}" alt="Video ${i + 1}" loading="lazy"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="portfolio-placeholder" style="display:none;position:absolute;inset:0;">Sin imagen</div>
+          <div class="portfolio-placeholder" style="display:none;position:absolute;inset:0;">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".4"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
           <div class="portfolio-overlay">
             <a href="${p.link}" class="portfolio-link" target="_blank" rel="noopener">
-              Ver proyecto
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Ver video
             </a>
           </div>
         </div>
-      `;
-      return `
-        <div class="portfolio-item reveal" data-category="${p.category}" style="transition-delay:${i * 0.07}s">
-          ${imgHTML}
-          <div class="portfolio-info">
-            <div class="portfolio-tags">${p.tags.map(t => `<span class="portfolio-tag">${t}</span>`).join('')}</div>
-            <h3 class="portfolio-title">${p.title}</h3>
-            <p class="portfolio-desc">${p.desc}</p>
-          </div>
-        </div>
-      `;
-    }).join('');
+      </div>
+    `).join('');
   }
 
-  // ── TESTIMONIALS ──────────────────────────────────────────
-  const test = C.testimonials;
-  setText('testimonials-badge', test.badge);
-  setText('testimonials-headline', test.headline);
-
-  const track = $('testimonials-track');
-  const dotsContainer = $('slider-dots');
-  if (track) {
-    track.innerHTML = test.items.map(t => {
-      const avatarHTML = `<img src="${t.avatar}" alt="${t.name}" class="test-avatar"
-        onerror="this.outerHTML='<div class=test-avatar-placeholder>👤</div>'">`;
-      const stars = Array(t.stars).fill('<span>★</span>').join('');
-      return `
-        <div class="testimonial-card">
-          <div class="test-stars">${stars}</div>
-          <p class="test-text">${t.text}</p>
-          <div class="test-author">
-            ${avatarHTML}
-            <div>
-              <div class="test-name">${t.name}</div>
-              <div class="test-role">${t.role}</div>
-            </div>
-          </div>
+  // ── QUOTE (Napoleon Hill) ─────────────────────────────────
+  const quoteEl = $('quote-inner');
+  if (quoteEl && C.quote) {
+    const q = C.quote;
+    quoteEl.innerHTML = `
+      <div class="quote-marks">"</div>
+      <blockquote class="quote-text">${q.text}</blockquote>
+      <div class="quote-extra">${q.extra}</div>
+      <div class="quote-author">
+        <div class="quote-line"></div>
+        <div>
+          <span class="quote-name">${q.author}</span>
+          <span class="quote-source">${q.source}</span>
         </div>
-      `;
-    }).join('');
-  }
-  if (dotsContainer) {
-    dotsContainer.innerHTML = test.items.map((_, i) =>
-      `<div class="slider-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`
-    ).join('');
+      </div>
+    `;
   }
 
   // ── METRICS ───────────────────────────────────────────────
@@ -293,7 +270,7 @@
     metGrid.innerHTML = met.items.map(m => `
       <div class="metric-item reveal">
         <div class="metric-value">
-          <span class="metric-number" data-target="${m.value}">0</span>${m.suffix}
+          ${m.prefix || ''}<span class="metric-number" data-target="${m.value}">0</span>${m.suffix}
         </div>
         <div class="metric-label">${m.label}</div>
       </div>

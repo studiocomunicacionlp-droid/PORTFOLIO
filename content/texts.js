@@ -41,9 +41,9 @@ const CONTENT = {
       { icon: "🔄", title: "Revisiones incluidas", desc: "Correcciones hasta que el resultado te convenza." },
     ],
     experience: [
-      { year: "2024–hoy",  role: "Editor Freelance Senior", company: "Marcas & Ecommerce" },
-      { year: "2022–2024", role: "Editor de Contenido",     company: "Agencias de Marketing Digital" },
-      { year: "2020–2022", role: "Video Creator",           company: "Marcas Personales & Emprendedores" },
+      { year: "2026 — hoy",  role: "Edición integral", company: "Reels, TikToks, Ads, YouTube, Marcas & Ecommerce" },
+      { year: "2025",        role: "Agencias + Marcas", company: "Trabajé con agencias de marketing, ecomms y empecé a editar para marcas personales" },
+      { year: "2024",        role: "Primeros pasos",    company: "Comencé editando contenido para tiendas de ecommerce" },
     ],
     photo: "images/about-photo.jpg",
     photo_alt: "Francisco editando video",
@@ -71,10 +71,10 @@ const CONTENT = {
       },
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
-        title: "Portadas para Reels",
-        desc: "Miniaturas y portadas profesionales que hacen que tu perfil tenga coherencia visual y atraiga más visitas.",
-        features: ["Diseño personalizado", "Coherencia de marca", "Formato optimizado para Instagram"],
-        price: "Desde $3 USD c/u",
+        title: "Carruseles & Miniaturas",
+        desc: "Carruseles para Instagram y miniaturas (thumbnails) para YouTube que aumentan clics y dan coherencia visual a tu perfil.",
+        features: ["Carruseles de Instagram", "Miniaturas para YouTube", "Precio a convenir"],
+        price: "Precio a convenir",
       },
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
@@ -222,40 +222,12 @@ const CONTENT = {
     ],
   },
 
-  /* ── TESTIMONIOS ─────────────────────────────────────────── */
-  testimonials: {
-    badge: "Testimonios",
-    headline: "Lo que dicen mis clientes",
-    items: [
-      {
-        name: "Valentina Torres",
-        role: "Coach Personal & Marca Personal",
-        avatar: "images/testimonials/avatar-1.jpg",
-        text: "Francisco transformó mi contenido. Antes publicaba videos caseros sin resultados. Ahora mis reels tienen 10 veces más alcance y me llegan consultas todos los días.",
-        stars: 5,
-      },
-      {
-        name: "Martín Álvarez",
-        role: "Fundador, Tienda de Ropa Online",
-        avatar: "images/testimonials/avatar-2.jpg",
-        text: "Contraté el Pack Mensual y fue la mejor decisión del año. Mis ads tienen mejor performance y el ROAS mejoró notablemente. Entrega siempre a tiempo, impecable.",
-        stars: 5,
-      },
-      {
-        name: "Laura Méndez",
-        role: "Emprendedora — Gastronomía",
-        avatar: "images/testimonials/avatar-3.jpg",
-        text: "Un video que editó Fran llegó a 180K views orgánicos en TikTok. No lo podía creer. Sabe exactamente qué funciona para cada plataforma.",
-        stars: 5,
-      },
-      {
-        name: "Diego Sánchez",
-        role: "YouTuber — Finanzas",
-        avatar: "images/testimonials/avatar-4.jpg",
-        text: "Para YouTube llegamos a un precio muy justo según el proyecto. Calidad de edición premium, retención de mis videos mejoró al 68% promedio. 100% recomendable.",
-        stars: 5,
-      },
-    ],
+  /* ── FRASE INSPIRACIONAL ──────────────────────────────────── */
+  quote: {
+    text: "Todo lo que la mente puede concebir y creer, lo puede lograr.",
+    author: "Napoleon Hill",
+    source: "Piense y Hágase Rico",
+    extra: "La diferencia entre los que llegan y los que no, no es el talento. Es la decisión de empezar.",
   },
 
   /* ── MÉTRICAS ────────────────────────────────────────────── */
@@ -263,10 +235,10 @@ const CONTENT = {
     badge: "En números",
     headline: "Resultados que hablan",
     items: [
-      { value: 50,   suffix: "+",      label: "Clientes satisfechos" },
-      { value: 1500, suffix: "+",      label: "Videos realizados" },
-      { value: 2,    suffix: "+ años", label: "De experiencia" },
-      { value: 98,   suffix: "%",      label: "Clientes que repiten" },
+      { prefix: "+", value: 50,   suffix: "",       label: "Clientes satisfechos" },
+      { prefix: "+", value: 1500, suffix: "",       label: "Videos realizados" },
+      { prefix: "+", value: 2,    suffix: " años",  label: "De experiencia" },
+      { prefix: "",  value: 98,   suffix: "%",      label: "Clientes que repiten" },
     ],
   },
 
@@ -315,6 +287,6 @@ const CONTENT = {
       number: "+5493425220624",
       message: "Hola Francisco! Me gustaría consultar sobre edición de videos.",
     },
-    email: "hola@franciscogimenez.com",
+    email: "franciscogimenez251007@gmail.com",
   },
 };
