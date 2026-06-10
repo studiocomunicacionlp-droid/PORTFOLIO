@@ -1211,17 +1211,22 @@ input, textarea, select { font-family: inherit; }
 
 .video-modal-inner {
   position: relative;
-  width: min(90vw, 420px);
-  /* 9:16 para videos verticales */
+  width: min(90vw, 380px);
   aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
 }
+/* El player de Drive es 16:9. Al hacerlo 316% de ancho y centrarlo,
+   el video vertical (centro del player) llena el contenedor 9:16
+   y los controles quedan al fondo del video, no en el medio. */
 .video-modal-inner iframe {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  top: 0;
+  left: 50%;
+  width: 316%;
   height: 100%;
+  transform: translateX(-50%);
   border: none;
-  border-radius: var(--radius-lg);
 }
 
 /* ── CURSOR PERSONALIZADO ────────────────────────────────────── */
