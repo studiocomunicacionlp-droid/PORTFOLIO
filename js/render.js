@@ -141,7 +141,7 @@
                   <div class="pricing-plan-name">${p.name}</div>
                   <div class="pricing-plan-desc">${p.desc}</div>
                 </div>
-                <div class="pricing-plan-price">${p.price}</div>
+                ${p.price ? `<div class="pricing-plan-price">${p.price}</div>` : ''}
               </div>
             `).join('')}
           </div>
