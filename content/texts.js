@@ -141,10 +141,9 @@ const CONTENT = {
         badge: "⚡ SOLO 5 CUPOS / MES",
         desc: "Comprometete con un volumen mensual y obtené el mejor precio por video.",
         items: [
-          { name: "Pack Starter",  qty: "5 videos",   note: "Ideal para empezar" },
-          { name: "Pack Growth",   qty: "10 videos",  note: "Para crecer consistente" },
-          { name: "Plan Completo", qty: "30 videos",  note: "Presencia constante" },
-          { name: "Plan Máximo",   qty: "234 videos", note: "9 videos × día, lun a sáb" },
+          { name: "Pack Starter",  qty: "5 videos",  note: "Ideal para empezar" },
+          { name: "Pack Growth",   qty: "10 videos", note: "Para crecer consistente" },
+          { name: "Plan Completo", qty: "30 videos", note: "Presencia constante" },
         ],
         note: "Una vez llenos los 5 cupos mensuales, se abre lista de espera.",
         cta: "Reservar cupo",
