@@ -43,6 +43,20 @@
     </div>`;
   }
 
+  // ── SCARCITY BANNER ────────────────────────────────────────
+  const scarcityInner = $('scarcity-inner');
+  if (scarcityInner && C.scarcity) {
+    const sc = C.scarcity;
+    scarcityInner.innerHTML = `
+      <div class="scarcity-left">
+        <span class="scarcity-dot"></span>
+        <span class="scarcity-headline">${sc.headline}</span>
+      </div>
+      <p class="scarcity-desc">${sc.desc}</p>
+      <a href="#pricing" class="scarcity-cta">${sc.cta} →</a>
+    `;
+  }
+
   // ── META / SEO ─────────────────────────────────────────────
   $('page-title').textContent  = C.meta.title;
   $('meta-desc').content       = C.meta.description;
@@ -77,6 +91,26 @@
         <div class="hero-stat-label">${m.label}</div>
       </div>
     `).join('');
+  }
+
+  // ── METHODOLOGY ───────────────────────────────────────────
+  if (C.methodology) {
+    const meth = C.methodology;
+    setText('methodology-badge', meth.badge);
+    setText('methodology-headline', meth.headline);
+    setText('methodology-desc', meth.desc);
+    const pillarsEl = $('methodology-pillars');
+    if (pillarsEl) {
+      pillarsEl.innerHTML = meth.pillars.map((p, i) => `
+        <div class="pillar reveal" style="transition-delay:${i * 0.1}s">
+          <div class="pillar-number">${p.number}</div>
+          <div class="pillar-body">
+            <h3 class="pillar-title">${p.title}</h3>
+            <p class="pillar-desc">${p.desc}</p>
+          </div>
+        </div>
+      `).join('');
+    }
   }
 
   // ── ABOUT ─────────────────────────────────────────────────
@@ -146,56 +180,44 @@
     setText('pricing-headline', pr.headline);
     setText('pricing-subtitle', pr.subtitle);
 
-    const pricingCols = $('pricing-cols');
-    if (pricingCols) {
-      pricingCols.innerHTML = pr.categories.map((col, ci) => `
-        <div class="pricing-col ${col.color} reveal" style="transition-delay:${ci * 0.1}s">
-          <div class="pricing-col-header">
-            <div class="pricing-col-name">${col.name}</div>
-            <div class="pricing-col-sub">${col.subtitle}</div>
-          </div>
-          <div class="pricing-col-plans">
-            ${col.plans.map(p => `
-              <div class="pricing-plan">
-                <div>
-                  <div class="pricing-plan-name">${p.name}</div>
-                  <div class="pricing-plan-desc">${p.desc}</div>
-                </div>
-                ${p.price ? `<div class="pricing-plan-price">${p.price}</div>` : ''}
-              </div>
+    const compEl = $('pricing-comparison');
+    if (compEl && pr.comparison) {
+      const ind = pr.comparison.individual;
+      const mon = pr.comparison.monthly;
+      compEl.innerHTML = `
+        <div class="price-card reveal">
+          <div class="price-card-tag">${ind.tag}</div>
+          <h3 class="price-card-title">${ind.title}</h3>
+          <p class="price-card-desc">${ind.desc}</p>
+          <ul class="price-items">
+            ${ind.items.map(item => `
+              <li class="price-item">
+                <span class="price-item-name">${item.name}</span>
+                <span class="price-item-note">${item.note}</span>
+              </li>
             `).join('')}
-          </div>
+          </ul>
+          <p class="price-note">${ind.note}</p>
+          <a href="#contact" class="btn btn-secondary price-cta">${ind.cta}</a>
         </div>
-      `).join('');
-    }
-
-    const menCard = $('pricing-mensual');
-    if (menCard && pr.mensual_card) {
-      const mc = pr.mensual_card;
-      menCard.innerHTML = `
-        <div class="pricing-mensual-arrow">↘</div>
-        <div class="pm-title">${mc.title}</div>
-        <div class="pm-main">${mc.subtitle}</div>
-        <div class="pm-sub">${mc.desc}</div>
-        <div class="pm-highlight">${mc.highlight}</div>
-        <div class="pm-note">${mc.note}</div>
-        <a href="#contact" class="btn btn-primary" style="margin-top:1.25rem;font-size:.85rem;padding:.7rem 1.4rem">
-          Consultar precio
-        </a>
-      `;
-    }
-
-    const extrasEl = $('pricing-extras');
-    if (extrasEl && pr.extras) {
-      extrasEl.innerHTML = `
-        <div class="pricing-extras-title">${pr.extras.title}</div>
-        <div class="pricing-extra-items">
-          ${pr.extras.items.map(e => `
-            <div class="pricing-extra-item">
-              <span>${e.name}</span>
-              <span class="pricing-extra-price">${e.price}</span>
-            </div>
-          `).join('')}
+        <div class="price-card price-card-featured reveal">
+          <div class="price-card-scarcity">${mon.badge}</div>
+          <div class="price-card-tag featured">${mon.tag}</div>
+          <h3 class="price-card-title">${mon.title}</h3>
+          <p class="price-card-desc">${mon.desc}</p>
+          <ul class="price-items">
+            ${mon.items.map(item => `
+              <li class="price-item">
+                <span class="price-item-name">${item.name}</span>
+                <div class="price-item-right">
+                  <span class="price-item-qty">${item.qty}</span>
+                  <span class="price-item-note">${item.note}</span>
+                </div>
+              </li>
+            `).join('')}
+          </ul>
+          <p class="price-note">${mon.note}</p>
+          <a href="#contact" class="btn btn-primary price-cta">${mon.cta}</a>
         </div>
       `;
     }

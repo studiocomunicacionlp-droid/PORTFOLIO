@@ -1,160 +1,170 @@
-/**
- * ============================================================
- *  ARCHIVO CENTRAL DE TEXTOS — Editá todo el contenido aquí
- * ============================================================
- */
 const CONTENT = {
 
   /* ── META SEO ────────────────────────────────────────────── */
   meta: {
-    title: "Francisco Gimenez | Editor de Video — TikTok & Reels",
-    description: "Edición de video profesional para TikTok, Reels e Instagram. Contenido que para el scroll y genera resultados reales para tu marca.",
-    keywords: "edición de video, reels, tiktok, instagram, editor de video, contenido digital, publicidad, ecommerce",
+    title: "Francisco Giménez | Editor de Videos Cortos y Estratega de Retención",
+    description: "Maximizo el watch-time de tu contenido mediante edición estratégica diseñada para retener. Solo 5 cupos disponibles por mes.",
+    keywords: "editor de video cortos, estratega de retención, reels, tiktok, watch-time, edición estratégica, instagram",
     author: "Francisco Gimenez",
+  },
+
+  /* ── SCARCITY ────────────────────────────────────────────── */
+  scarcity: {
+    headline: "SOLO 5 CUPOS DISPONIBLES POR MES",
+    desc: "Trabajo con un grupo exclusivo de creadores para garantizar la máxima calidad y retención en cada video. Una vez llenos los cupos, se abre lista de espera.",
+    cta: "Quiero mi cupo",
   },
 
   /* ── HERO ────────────────────────────────────────────────── */
   hero: {
-    badge: "Disponible para proyectos",
-    name: "Francisco Gimenez",
-    profession: "Editor de Video — TikTok & Reels",
-    tagline: "Creo contenido que <span class='highlight'>para el scroll</span> y convierte visitas en ventas reales.",
-    cta_primary: "Quiero mi video",
-    cta_secondary: "Ver mis trabajos",
+    badge: "Solo 5 cupos disponibles este mes",
+    name: "Francisco Giménez",
+    profession: "Editor de Videos Cortos y Estratega de Retención",
+    tagline: "Maximizo el <span class='highlight'>watch-time</span> de tu contenido mediante edición estratégica diseñada para retener.",
+    cta_primary: "Ver Packs",
     photo: "images/hero-photo.jpg",
-    photo_alt: "Francisco Gimenez — Editor de Video",
+    photo_alt: "Francisco Giménez — Editor de Video",
+  },
+
+  /* ── METODOLOGÍA ─────────────────────────────────────────── */
+  methodology: {
+    badge: "Metodología",
+    headline: "La edición sin estrategia es solo estética",
+    desc: "Creo Estrategias de Retención a través de la Edición, aplicando psicología visual para que tu audiencia no deje de mirar.",
+    pillars: [
+      {
+        number: "01",
+        title: "Hook en los primeros 3 segundos",
+        desc: "El primer frame determina si el video vive o muere. Capturo la atención antes de que el dedo llegue al scroll.",
+      },
+      {
+        number: "02",
+        title: "Retención por psicología visual",
+        desc: "Cortes, ritmo, música y texto coordinados para mantener al espectador enganchado hasta el último segundo.",
+      },
+      {
+        number: "03",
+        title: "Optimizado para el algoritmo",
+        desc: "Mayor watch-time = mayor alcance orgánico. Videos que el algoritmo premia y distribuye a más personas.",
+      },
+    ],
   },
 
   /* ── SOBRE MÍ ────────────────────────────────────────────── */
   about: {
     badge: "Sobre mí",
-    headline: "Video que vende, no que solo se ve bien",
-    story: `Soy <strong>Francisco Gimenez</strong>, editor de video especializado en contenido para redes sociales.
-            Me dedico a crear <strong>Reels, TikToks y piezas publicitarias</strong> que no solo se ven bien,
-            sino que generan resultados: más alcance, más engagement y más ventas.`,
-    story2: `Trabajo con marcas personales, comerciales y tiendas de ecommerce que necesitan
-             contenido constante y de calidad. Entrego en tiempo y con el estilo que tu audiencia necesita ver.`,
+    headline: "Video que convierte, no que solo se ve bien",
+    story: `Soy <strong>Francisco Giménez</strong>, editor de video especializado en contenido corto para redes sociales. Mi diferencial es combinar <strong>edición profesional con estrategia de retención</strong> para que tus videos generen resultados reales.`,
+    story2: `Trabajo con marcas personales, comerciales y tiendas de ecommerce. Entrego en tiempo, con foco en el watch-time desde el primer fotograma.`,
     differentials: [
-      { icon: "⚡", title: "Entrega rápida", desc: "Packs entregados en 24–48 hs según volumen." },
-      { icon: "🎯", title: "Enfocado en conversión", desc: "Videos diseñados para parar el scroll y generar acción." },
-      { icon: "🎬", title: "Estilo adaptado", desc: "Me adapto al tono de tu marca: elegante, dinámico o viral." },
-      { icon: "🔄", title: "Revisiones incluidas", desc: "Correcciones hasta que el resultado te convenza." },
+      { icon: "⚡", title: "Entrega rápida",          desc: "Videos sueltos en 24–48 hs con prioridad total." },
+      { icon: "🎯", title: "Estrategia de retención", desc: "Cada corte tiene un propósito. No edito por estética." },
+      { icon: "🎬", title: "Estilo adaptado",         desc: "Me adapto al tono de tu marca sin perder identidad." },
+      { icon: "🔄", title: "Revisiones incluidas",    desc: "Correcciones hasta que el resultado te convenza." },
     ],
     experience: [
-      { year: "2026 — hoy",  role: "Edición integral", company: "Reels, TikToks, Ads, YouTube, Marcas & Ecommerce" },
-      { year: "2025",        role: "Agencias + Marcas", company: "Trabajé con agencias de marketing, ecomms y empecé a editar para marcas personales" },
-      { year: "2024",        role: "Primeros pasos",    company: "Comencé editando contenido para tiendas de ecommerce" },
+      { year: "2026 — hoy", role: "Editor + Estratega", company: "Reels, TikToks, Ads, Marcas & Ecommerce" },
+      { year: "2025",       role: "Agencias + Marcas",  company: "Agencias de marketing, ecomms y marcas personales" },
+      { year: "2024",       role: "Primeros pasos",     company: "Contenido para tiendas de ecommerce" },
     ],
     photo: "images/about-photo.jpg",
     photo_alt: "Francisco editando video",
   },
 
-  /* ── SERVICIOS (cards de overview) ──────────────────────── */
+  /* ── SERVICIOS ───────────────────────────────────────────── */
   services: {
     badge: "Servicios",
     headline: "¿Qué tipo de contenido creamos?",
-    subtitle: "Desde un reel suelto hasta un plan mensual completo. Elegí lo que mejor se adapta a tu negocio.",
+    subtitle: "Desde un reel suelto hasta un plan mensual completo.",
     items: [
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polygon points="10 8 16 11 10 14 10 8" fill="currentColor" stroke="none" opacity=".6"/></svg>`,
         title: "Reels para Marcas",
         desc: "Edición premium para marcas personales y comerciales. Contenido que posiciona y genera confianza en tu audiencia.",
-        hook: "El contenido que te diferencia de la competencia",
-        features: ["Posicioná tu marca como referente", "Generá confianza desde el primer segundo", "Estilo adaptado a tu identidad"],
+        hook: "El contenido que te diferencia",
+        features: ["Hook en los primeros 3 segundos", "Estilo adaptado a tu identidad", "Optimizado para el algoritmo"],
       },
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>`,
         title: "Videos de Producto",
-        desc: "Reels de ecommerce, publicidad y ads optimizados para mostrar tu producto y generar ventas directas.",
+        desc: "Reels de ecommerce y ads optimizados para mostrar tu producto y generar ventas directas.",
         hook: "Hacé que tu producto se venda solo",
-        features: ["Tu producto irresistible en pantalla", "Ads que generan conversiones reales", "Optimizado para Meta & TikTok"],
+        features: ["Tu producto irresistible en pantalla", "Ads que generan conversiones", "Optimizado para Meta & TikTok"],
       },
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
         title: "Carruseles & Miniaturas",
-        desc: "Carruseles para Instagram y miniaturas para YouTube que aumentan clics y dan coherencia visual a tu perfil.",
-        hook: "La primera impresión que nadie puede ignorar",
+        desc: "Carruseles para Instagram y miniaturas para YouTube que aumentan clics y dan coherencia visual.",
+        hook: "La primera impresión que nadie ignora",
         features: ["Más clics = más alcance orgánico", "Coherencia visual que fideliza", "Diseño que destaca en el feed"],
-      },
-      {
-        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
-        title: "Plan Mensual",
-        desc: "Contenido diario de lunes a sábados. Para cuentas que necesitan presencia constante y resultados sostenidos.",
-        hook: "234 videos al mes. El algoritmo te va a amar.",
-        features: ["Presencia diaria sin esfuerzo de tu parte", "Consistencia que construye audiencia real", "Liberá tu tiempo para hacer crecer tu negocio"],
       },
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none" opacity=".7"/></svg>`,
         title: "Videos para YouTube",
         desc: "Edición de videos largos y Shorts con formato profesional que retiene a tu audiencia hasta el final.",
         hook: "Tu canal, con la edición que se merece",
-        features: ["Edición que mantiene al espectador hasta el final", "Intro, outro, efectos y captions animados", "Thumbnails que disparan el CTR"],
+        features: ["Edición que mantiene hasta el final", "Intro, outro y captions animados", "Thumbnails que disparan el CTR"],
       },
       {
         icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
-        title: "Packs Personalizados",
+        title: "Pack Personalizado",
         desc: "¿Necesitás algo diferente? Armamos juntos el pack ideal para tus objetivos, volumen y plataforma.",
-        hook: "Tu visión hecha video, sin límites ni moldes",
-        features: ["Mix de formatos a medida", "Escalá según tus objetivos", "Un solo editor que conoce tu marca"],
+        hook: "Tu visión hecha video, sin límites",
+        features: ["Mix de formatos a medida", "Escalá según tus objetivos", "Editor dedicado a tu marca"],
+        featured: true,
       },
     ],
   },
 
-  /* ── PRECIOS (sección especial de pricing) ───────────────── */
+  /* ── PRECIOS ─────────────────────────────────────────────── */
   pricing: {
     badge: "Packs",
-    headline: "Edición de Video — Solos & Por Packs",
-    subtitle: "Contenido en reels o publicidad que <strong>para el scroll</strong> y <strong>genera resultados</strong>.",
-    categories: [
-      {
-        id: "marcas",
-        name: "MARCAS",
-        highlight: true,  // card destacada
-        subtitle: "Personales o Comerciales. Reels para Instagram & TikTok",
-        color: "primary",
-        plans: [
-          { name: "Edición Individual", price: "", desc: "1 reel o TikTok editado" },
-          { name: "Pack Starter",       price: "", desc: "5 videos — ideal para empezar" },
-          { name: "Pack Growth",        price: "", desc: "10 videos — para crecer consistente" },
-          { name: "Plan Mensual",       price: "", desc: "30 videos — presencia constante" },
+    headline: "Elegí tu modalidad de trabajo",
+    subtitle: "Videos individuales con entrega prioritaria, o plan mensual con precio especial.",
+    comparison: {
+      individual: {
+        title: "Videos Sueltos",
+        tag: "Entrega prioritaria",
+        desc: "Ideal para necesidades puntuales. Prioridad total en agenda y entrega en 24–48 hs.",
+        items: [
+          { name: "Reel / TikTok — Marca",  note: "Entrega 24–48 hs" },
+          { name: "Video de Producto / Ad", note: "Entrega 24–48 hs" },
+          { name: "YouTube Short",          note: "Entrega 48 hs" },
+          { name: "Carrusel o Miniatura",   note: "Entrega 24 hs" },
         ],
+        note: "El precio más elevado refleja la prioridad de entrega inmediata y la disponibilidad sobre la agenda.",
+        cta: "Consultar precio",
       },
-      {
-        id: "producto",
-        name: "PRODUCTO",
-        highlight: false,
-        subtitle: "Ecommerce / Ads / Reels para Instagram básicos",
-        color: "secondary",
-        plans: [
-          { name: "Edición Individual", price: "", desc: "1 video de producto editado" },
-          { name: "Pack Starter",       price: "", desc: "5 videos — perfecto para testear" },
-          { name: "Pack Growth",        price: "", desc: "10 videos — escala tu ecommerce" },
-          { name: "Plan Mensual",       price: "", desc: "30 videos — flujo constante de contenido" },
+      monthly: {
+        title: "Plan Mensual",
+        tag: "Precio bonificado",
+        badge: "⚡ SOLO 5 CUPOS / MES",
+        desc: "Comprometete con un volumen mensual y obtené el mejor precio por video.",
+        items: [
+          { name: "Pack Starter",  qty: "5 videos",   note: "Ideal para empezar" },
+          { name: "Pack Growth",   qty: "10 videos",  note: "Para crecer consistente" },
+          { name: "Plan Completo", qty: "30 videos",  note: "Presencia constante" },
+          { name: "Plan Máximo",   qty: "234 videos", note: "9 videos × día, lun a sáb" },
         ],
+        note: "Una vez llenos los 5 cupos mensuales, se abre lista de espera.",
+        cta: "Reservar cupo",
       },
-    ],
-    mensual_card: {
-      title: "PLAN MENSUAL MÁXIMO",
-      subtitle: "9 VIDEOS × DÍA",
-      desc: "Videos de Lunes a Sábados.",
-      highlight: "234 VIDEOS AL MES",
-      note: "Consultar disponibilidad y precio especial.",
     },
   },
 
   /* ── YOUTUBE ─────────────────────────────────────────────── */
   youtube: {
     badge: "YouTube",
-    headline: "Videos para YouTube — Hablamos y llegamos a un acuerdo",
-    subtitle: "La edición de videos largos tiene variables que hacen que cada proyecto sea único: duración, complejidad, efectos, captions, thumbnails y más. Por eso prefiero que lo hablemos directamente.",
+    headline: "Videos para YouTube — A convenir",
+    subtitle: "La edición de videos largos tiene variables únicas en cada proyecto. Por eso prefiero que lo hablemos directamente.",
     features: [
-      { icon: "🎬", title: "Videos Largos", desc: "Edición completa: intro, cortes, música, grafismo y outro." },
-      { icon: "⚡", title: "YouTube Shorts", desc: "Formato vertical optimizado para el algoritmo de Shorts." },
-      { icon: "🖼️", title: "Thumbnails",    desc: "Diseño de miniaturas que aumentan el CTR del video." },
-      { icon: "📝", title: "Captions & Subs",desc: "Subtítulos y captions animados para mayor retención." },
+      { icon: "🎬", title: "Videos Largos",  desc: "Edición completa: intro, cortes, música y outro." },
+      { icon: "⚡", title: "YouTube Shorts", desc: "Formato vertical optimizado para el algoritmo." },
+      { icon: "🖼️", title: "Thumbnails",    desc: "Miniaturas que aumentan el CTR del video." },
+      { icon: "📝", title: "Captions & Subs",desc: "Subtítulos animados para mayor retención." },
     ],
     cta: "Consultar por YouTube",
-    note: "Cada proyecto de YouTube se cotiza individualmente según duración y nivel de producción requerido.",
+    note: "Cada proyecto se cotiza individualmente según duración y nivel de producción.",
   },
 
   /* ── PORTFOLIO ───────────────────────────────────────────── */
@@ -164,40 +174,16 @@ const CONTENT = {
     subtitle: "Una selección de trabajos recientes en reels, ads y contenido para marcas.",
     categories: ["Todos", "Reels Marca", "Producto & Ads", "TikTok", "YouTube"],
     items: [
-      {
-        id: 1, category: "Reels Marca",
-        videoId: "1MJEjFgc-NWcw_8_oYt9gM139RGPArc6g",
-        tags: ["Reels Marca"],
-      },
-      {
-        id: 2, category: "Reels Marca",
-        videoId: "1_1XrS0jXxvnwC7-TLa4MpoI5T1Lq84Bo",
-        tags: ["Reels Marca"],
-      },
-      {
-        id: 3, category: "Producto & Ads",
-        videoId: "1RCYFRiAF_ZMrK_vn7MvKRark1LVP9SHf",
-        tags: ["Producto & Ads"],
-      },
-      {
-        id: 4, category: "TikTok",
-        videoId: "1dgwZjdEDjyFPljN3CC7GAESu8TJ5-3Qy",
-        tags: ["TikTok"],
-      },
-      {
-        id: 5, category: "Reels Marca",
-        videoId: "1bpqPUHDWrDwJV1EaDuPO3H_w8thGf1-q",
-        tags: ["Reels Marca"],
-      },
-      {
-        id: 6, category: "Producto & Ads",
-        videoId: "1i3TLX5TwccQgvIU61p0sssXpeOCIccnd",
-        tags: ["Producto & Ads"],
-      },
+      { id: 1, category: "Reels Marca",    videoId: "1MJEjFgc-NWcw_8_oYt9gM139RGPArc6g", tags: ["Reels Marca"]    },
+      { id: 2, category: "Reels Marca",    videoId: "1_1XrS0jXxvnwC7-TLa4MpoI5T1Lq84Bo", tags: ["Reels Marca"]    },
+      { id: 3, category: "Producto & Ads", videoId: "1RCYFRiAF_ZMrK_vn7MvKRark1LVP9SHf", tags: ["Producto & Ads"] },
+      { id: 4, category: "TikTok",         videoId: "1dgwZjdEDjyFPljN3CC7GAESu8TJ5-3Qy", tags: ["TikTok"]         },
+      { id: 5, category: "Reels Marca",    videoId: "1bpqPUHDWrDwJV1EaDuPO3H_w8thGf1-q", tags: ["Reels Marca"]    },
+      { id: 6, category: "Producto & Ads", videoId: "1i3TLX5TwccQgvIU61p0sssXpeOCIccnd", tags: ["Producto & Ads"] },
     ],
   },
 
-  /* ── CASOS DE ÉXITO ─────────────────────────────────────────── */
+  /* ── CASOS DE ÉXITO ─────────────────────────────────────── */
   cases: {
     badge: "Casos de Éxito",
     headline: "Marcas que crecieron con mi contenido",
@@ -224,7 +210,7 @@ const CONTENT = {
     ],
   },
 
-  /* ── FRASE INSPIRACIONAL ──────────────────────────────────── */
+  /* ── FRASE ───────────────────────────────────────────────── */
   quote: {
     text: "Todo lo que la mente puede concebir y creer, lo puede lograr.",
     author: "Napoleon Hill",
@@ -237,35 +223,32 @@ const CONTENT = {
     badge: "En números",
     headline: "Resultados que hablan",
     items: [
-      { prefix: "+", value: 50,   suffix: "",       label: "Clientes satisfechos" },
-      { prefix: "+", value: 1500, suffix: "",       label: "Videos realizados" },
-      { prefix: "+", value: 2,    suffix: " años",  label: "De experiencia" },
-      { prefix: "",  value: 98,   suffix: "%",      label: "Clientes que repiten" },
+      { prefix: "+", value: 50,   suffix: "",      label: "Clientes satisfechos" },
+      { prefix: "+", value: 1500, suffix: "",      label: "Videos realizados" },
+      { prefix: "+", value: 2,    suffix: " años", label: "De experiencia" },
+      { prefix: "",  value: 98,   suffix: "%",     label: "Clientes que repiten" },
     ],
   },
 
-  /* ── CTA / CONTACTO ──────────────────────────────────────── */
+  /* ── CONTACTO ────────────────────────────────────────────── */
   contact: {
     badge: "Contacto",
     headline: "¿Listo para que tu contenido genere resultados?",
     subtitle: "Contame qué necesitás y te respondo en menos de 24 hs con una propuesta.",
-    cta_text: "Consultar ahora",
     form: {
       name_placeholder: "Tu nombre",
       email_placeholder: "Tu email",
       service_placeholder: "¿Qué necesitás?",
       service_options: [
-        "Edición Individual — Marca ($15 USD)",
-        "Edición Individual — Producto ($10 USD)",
-        "Pack Starter — Marca ($65 USD)",
-        "Pack Starter — Producto ($45 USD)",
-        "Pack Growth — Marca ($120 USD)",
-        "Pack Growth — Producto ($85 USD)",
-        "Plan Mensual — Marca ($280 USD)",
-        "Plan Mensual — Producto ($225 USD)",
-        "Plan Mensual Máximo (234 videos)",
-        "Portadas para Reels",
-        "Videos para YouTube",
+        "Video Suelto — Reel / TikTok Marca",
+        "Video Suelto — Producto / Ad",
+        "Video Suelto — YouTube Short",
+        "Video Suelto — Carrusel / Miniatura",
+        "Plan Mensual — Pack Starter (5 videos)",
+        "Plan Mensual — Pack Growth (10 videos)",
+        "Plan Mensual — Plan Completo (30 videos)",
+        "Plan Mensual — Plan Máximo (234 videos)",
+        "Videos para YouTube (largo)",
         "Pack Personalizado",
       ],
       message_placeholder: "Contame sobre tu marca, qué contenido necesitás y en qué plataforma...",
@@ -277,11 +260,11 @@ const CONTENT = {
   /* ── FOOTER ──────────────────────────────────────────────── */
   footer: {
     name: "Francisco Gimenez",
-    tagline: "Editor de Video — TikTok & Reels",
+    tagline: "Editor de Videos Cortos y Estratega de Retención",
     copyright: `© ${new Date().getFullYear()} Francisco Gimenez. Todos los derechos reservados.`,
     social: [
-      { name: "Instagram", url: "https://www.instagram.com/frangimennez",                                                         icon: "instagram" },
-      { name: "WhatsApp",  url: "https://wa.me/5493425220624?text=Hola%20Francisco!%20Me%20gustar%C3%ADa%20consultar%20sobre%20edici%C3%B3n%20de%20videos.", icon: "whatsapp"  },
+      { name: "Instagram", url: "https://www.instagram.com/frangimennez", icon: "instagram" },
+      { name: "WhatsApp",  url: "https://wa.me/5493425220624?text=Hola%20Francisco!%20Me%20gustar%C3%ADa%20consultar%20sobre%20edici%C3%B3n%20de%20videos.", icon: "whatsapp" },
     ],
     whatsapp: {
       number: "+5493425220624",
