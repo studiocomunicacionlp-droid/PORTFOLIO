@@ -173,12 +173,12 @@ const CONTENT = {
     subtitle: "Una selección de trabajos recientes en reels, ads y contenido para marcas.",
     categories: ["Todos", "Reels Marca", "Producto & Ads", "TikTok", "YouTube"],
     items: [
-      { id: 1, category: "Reels Marca",    videoId: "1MJEjFgc-NWcw_8_oYt9gM139RGPArc6g", tags: ["Reels Marca"]    },
-      { id: 2, category: "Reels Marca",    videoId: "1_1XrS0jXxvnwC7-TLa4MpoI5T1Lq84Bo", tags: ["Reels Marca"]    },
-      { id: 3, category: "Producto & Ads", videoId: "1RCYFRiAF_ZMrK_vn7MvKRark1LVP9SHf", tags: ["Producto & Ads"] },
+      { id: 1, category: "Reels Marca",    videoId: "1_PADI1u6a4OVNBoDv794rQggSyUF5wi9", tags: ["Reels Marca"]    },
+      { id: 2, category: "Reels Marca",    videoId: "19-9ZFug4KvaD2TP2q0zgvHOfC8M5BcP1", tags: ["Reels Marca"]    },
+      { id: 3, category: "Producto & Ads", videoId: "1gmv0COx5_2vDsSCH5ViyMU_Db_ldI2db", tags: ["Producto & Ads"] },
       { id: 4, category: "TikTok",         videoId: "1dgwZjdEDjyFPljN3CC7GAESu8TJ5-3Qy", tags: ["TikTok"]         },
-      { id: 5, category: "Reels Marca",    videoId: "1bpqPUHDWrDwJV1EaDuPO3H_w8thGf1-q", tags: ["Reels Marca"]    },
-      { id: 6, category: "Producto & Ads", videoId: "1i3TLX5TwccQgvIU61p0sssXpeOCIccnd", tags: ["Producto & Ads"] },
+      { id: 5, category: "Reels Marca",    videoId: "1G7sEqNg5oT6bF3gtoRCEXPFcsTjQwToX", tags: ["Reels Marca"]    },
+      { id: 6, category: "Producto & Ads", videoId: "1QWsxQT_2SHQItEj5S_rd81aVA9X4YhMl", tags: ["Producto & Ads"] },
     ],
   },
 
